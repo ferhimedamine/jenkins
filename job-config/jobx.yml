@@ -13,5 +13,6 @@
      - pollscm: '@hourly'
    builders:
      - shell: |
+        make build
         make cleanup
         make run
