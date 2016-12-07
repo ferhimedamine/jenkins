@@ -2,7 +2,7 @@
 
 - job:
    name: jobx
-   description: 'Do not edit this job through the web!'
+   description: 'test job!'
    project-type: freestyle
    block-downstream: false
    scm:
