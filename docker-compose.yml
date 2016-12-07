@@ -5,6 +5,8 @@ services:
     image: 'ferhimedamine/jenkins'
     container_name: "jenkins_master"
     privileged: true
+    environment:
+      - "DOCKER_API_VERSION=1.23"
     ports:
       - 8080:8080
     volumes:
