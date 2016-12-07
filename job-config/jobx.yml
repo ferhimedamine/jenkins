@@ -1,0 +1,17 @@
+---
+
+- job:
+   name: jobx
+   description: 'Do not edit this job through the web!'
+   project-type: freestyle
+   block-downstream: false
+   scm:
+   - git:
+       skip-tag: true
+       url: https://github.com/ferhimedamine/helloworld.git
+   triggers:
+     - pollscm: '@hourly'
+   builders:
+     - shell: |
+        make cleanup
+        make run

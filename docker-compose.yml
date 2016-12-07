@@ -1,0 +1,26 @@
+version: '2'
+services:
+
+  jenkins_master:
+    build:
+      context: ./jenkins
+      dockerfile: Dockerfile
+    image: 'ferhimedamine/jenkins'
+    container_name: "jenkins_master"
+    privileged: true
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - ./job-config/generator.yml:/opt/jenkins-job/generator.yml
+      - ./job-config/jobx.yml:/opt/jenkins-job/jobx.yml
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+  #
+  # jenkins_slave:
+  #   image: 'killercentury/jenkins-slave-dind'
+  #   container_name: "jenkins_slave"
+  #   privileged: true
+  #   environment:
+  #     - "COMMAND_OPTIONS=-master http://jenkins_master:5000"
+  #   restart: always

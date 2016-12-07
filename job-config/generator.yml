@@ -1,0 +1,8 @@
+---
+
+- job:
+    name: Generator
+    description: 'job (Generator) to generate another job (JobX)'
+    project-type: freestyle
+    builders:
+      - shell: /usr/local/bin/jenkins-jobs  --conf /opt/jenkins-job/jenkins-job-builder.ini update /opt/jenkins-job/jobx.yml
