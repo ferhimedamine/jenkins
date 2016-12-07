@@ -2,9 +2,6 @@ version: '2'
 services:
 
   jenkins_master:
-    build:
-      context: ./jenkins
-      dockerfile: Dockerfile
     image: 'ferhimedamine/jenkins'
     container_name: "jenkins_master"
     privileged: true
